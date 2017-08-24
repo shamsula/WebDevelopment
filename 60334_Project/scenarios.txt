@@ -1,0 +1,34 @@
+Homepage of the website: http://shamsul.myweb.cs.uwindsor.ca/60334/project/homepage.php 
+
+There are two user levels on the website
+
+1. Employer 
+
+2. Applicant
+
+Currently there are two users registered 
+
+1. ID: mojojo , pass: limon1 , user_type: Employer
+2. ID: jojomo, pass:limon , user_type: Applicant
+
+An employer has various options at his disposal, all of which will be explored shortly
+
+Features Exclusive to Employer:
+
+Features can be located at : http://shamsul.myweb.cs.uwindsor.ca/60334/project/profile.php
+
+1. Once registered An employer can post a job on the website , which can be viewed by any client visiting the site
+
+2. An employer can view the Jobs That he posted, and delete them individually.
+
+3. An employer can view User_IDs of the applicants that have applied to their jobs. A pie chart showing the number of jobs and employers who have posted the jobs.
+
+
+Feautures of an applicant
+
+1. A user can search for jobs either on the homepage, and apply to them should they choose to
+
+2. The user can also delete applications that they made from their profile menu. 
+
+
+General Feature Tests
