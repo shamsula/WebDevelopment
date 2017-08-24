@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-<script src=“/js/ajax.js"> </script> 
+<script src=â€œ/js/ajax.js"> </script> 
 
 
 
@@ -47,13 +47,14 @@ session_start();
 
 if (isset($_POST['user'])   &&
     isset($_POST['title'])   && 
-      
+      isset($_POST['location'])   &&
       isset($_POST['expiry']))
   { 
-$stmt = $conn->prepare("INSERT INTO jobListing( title, expiry_date, employer_ID ) VALUES( ?, ?, ?)");
-$stmt->bind_param("sss",$title,$expiry,$user);
+$stmt = $conn->prepare("INSERT INTO jobListing( title,location, expiry_date, employer_ID ) VALUES( ?, ?, ?, ?)");
+$stmt->bind_param("ssss",$title,$location, $expiry,$user);
 
 $title= mysqli_real_escape_string($conn, $_POST['title'] );
+$location= mysqli_real_escape_string($conn, $_POST['location'] );
 $user=  mysqli_real_escape_string($conn, $_POST['user']);
 $expiry=  mysqli_real_escape_string($conn, $_POST['expiry']);
 
@@ -64,7 +65,7 @@ if (!$stmt->execute()) {
     echo "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
   }
 
-
+else header('Location:profile.php');
 
 }
   
@@ -105,12 +106,18 @@ $uid= $_SESSION['username'];
      <div class="form-group col-lg-5 col-centered">
       <label for="user">Employee ID</label> 
       <input class="form-control" type="text" name="user" id="user" placeholder="Enter Your Employee ID here" value="<?php echo htmlspecialchars($uid); ?>" required> </div></div><br/> <br/>
-       
+  
+     
 <div class="row">
      <div class="form-group col-lg-5 col-centered">
-      <label for="title">Title</label> 
+      <label for="title">Job Title</label> 
       <input class="form-control" type="text" name="title" id="title" placeholder="Enter the JOB TITLE here" required "> </div></div> <br/><br/> 
      
+<div class="row">
+     <div class="form-group col-lg-5 col-centered">
+      <label for="location">location</label> 
+      <input class="form-control" type="text" name="location" id="location" placeholder="Enter the Location here" required "> </div></div> <br/><br/> 
+  
 <div class="row">
      <div class="form-group col-lg-5 col-centered">
       <label for="expiry">Expiry Date</label> 
