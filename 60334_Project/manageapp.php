@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-<script src=“/js/ajax.js"> </script> 
+<script src=â€œ/js/ajax.js"> </script> 
 
 
 
@@ -111,7 +111,7 @@ $uid= $_SESSION['username'];
 <?php
 if (isset($_SESSION['username'])&&$_SESSION['type']==2){
 $user = $_SESSION['username'];
- $query  = "SELECT * FROM jobListing,JobApplications where applicant_ID= '$user'";
+ $query  = "SELECT * FROM jobListing,JobApplications,client where applicant_ID= '$user'AND client.ID = applicant_ID AND job_ID = jobListing.ID";
   $result = $conn->query($query);
   if (!$result) die($conn->error);
 $rows = $result->num_rows;
