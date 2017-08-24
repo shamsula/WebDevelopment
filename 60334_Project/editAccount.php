@@ -66,17 +66,7 @@ header('Location:logout.php');
 <div class="container">
   <form action="editAccount.php" method="post">
      
-     <div class="row">
-     <div class="form-group col-lg-5 col-centered">
-     <label for="fname">Change Name</label> 
-     <a class="btn btn-a " id="nchange">Change</a>
-     <div id="nchange1" >
-      <label for="fname">Change First Name</label> 
-      <input class="form-control" type="text" name="fname" id="fname" placeholder="New First Name"  > 
-      <label for="lname">Change Last Name</label> 
-      <input class="form-control" type="text" name="lname" id="lname" placeholder="New Last Name"  > </div></div></div> <br/><br/> 
-      
-
+     
       
 <div class="row">
      <div class="form-group col-lg-5 col-centered">
