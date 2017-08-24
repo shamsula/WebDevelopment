@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-<script src=“/js/ajax.js"> </script> 
+<script src=â€œ/js/ajax.js"> </script> 
 
 
 
@@ -102,7 +102,7 @@ $uid= $_SESSION['username'];
 
 <div class="span4 offset4 text-center">
 
-<h1 class="span4 offset4 text-center">Here are the Jobs you Posted</h1> </h1> <br/> <br/>
+<h1 class="span4 offset4 text-center">Here are applications for jobs posted by you</h1> </h1> <br/> <br/>
 
 </div> </div>
 
@@ -111,7 +111,7 @@ $uid= $_SESSION['username'];
 <?php
 if (isset($_SESSION['username'])&&$_SESSION['type']=1){
 $user = $_SESSION['username'];
- $query  = "SELECT * FROM jobListing,JobApplications where employer_ID= '$user'";
+ $query  = "SELECT * FROM jobListing,JobApplications where employer_ID= '$user' AND Job_ID = ID ";
   $result = $conn->query($query);
   if (!$result) die($conn->error);
 $rows = $result->num_rows;
