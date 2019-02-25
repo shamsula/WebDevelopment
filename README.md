@@ -1,3 +1,3 @@
 # WebDevelopment
 
-this is work done for assignment #4 , for the course 60-334 taken at WindsorU
+A cumulative collection of the more prominent web-based projects 
